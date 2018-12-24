@@ -99,11 +99,13 @@ body {
   &__title-top {
     position: absolute;
     font-size: 10rem;
-    top: 15%;
-    right: -10rem;
-    color: #0000003f;
-    transform: rotate(-90deg);
-    z-index: 1;
+    bottom: 0;
+    right: 15rem;
+    color: #000;
+    letter-spacing: 5px;
+    line-height: 1;
+    text-transform: capitalize;
+    -webkit-font-smoothing: antialiased;
   }
 }
 
