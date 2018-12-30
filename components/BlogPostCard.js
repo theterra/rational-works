@@ -40,8 +40,9 @@ const BlogPostCard = ({ post = {} }) => {
           {data.summary.length ? data.summary[0].text : ""}
         </p>
       </div>
-      <div className="read__more" onClick={() => routeToPost(post)}>
-        Read more<span>&rarr;</span>
+      <div onClick={() => routeToPost(post)}>
+        <span className="read__more">Read more</span>
+        <span>&rarr;</span>
       </div>
     </div>
   );

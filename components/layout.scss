@@ -1,0 +1,30 @@
+.circle-wrapper {
+  background: repeating-radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0.05) 1px,
+    #ffff 1px,
+    #fff 50px
+  );
+}
+
+.read__more {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-grey-dark-1);
+  box-shadow: rgba(255, 196, 0, 0.75) 0px -2px 0px 0px inset;
+  font-weight: bold;
+  margin-right: 0.2rem;
+  border-bottom: 1px solid rgba(255, 196, 0, 0.75);
+  transition: all 0.3s;
+  cursor: pointer;
+
+  span {
+    margin-left: 5px;
+    transition: margin 0.3s;
+  }
+
+  &:hover {
+    background: rgba(255, 196, 0, 0.75);
+  }
+}

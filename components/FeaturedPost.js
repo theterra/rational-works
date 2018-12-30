@@ -15,9 +15,10 @@ const FeaturedPost = ({ featuredPost }) => {
             {data.summary.length ? data.summary[0].text : ""}
           </p>
           <Link href={linkResolver(featuredPost)}>
-            <div className="read__more">
-              Read more<span>&rarr;</span>
-            </div>
+            <span>
+              <span className="read__more">Read more</span>
+              <span>&rarr;</span>
+            </span>
           </Link>
         </div>
         <div className="blog__feature__image-box">

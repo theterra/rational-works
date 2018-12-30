@@ -1,0 +1,13 @@
+.footer {
+    background-color: #141414;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+        flex: 1;
+        text-align: center;
+        color: #fff;
+        font-size: 3rem;
+    }
+}

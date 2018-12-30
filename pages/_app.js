@@ -1,18 +1,18 @@
 import React from "react";
 import App, { Container } from "next/app";
 
-import Router from 'next/router';
-import NProgress from 'nprogress';
+import Router from "next/router";
+import NProgress from "nprogress";
 
 Router.onRouteChangeStart = () => {
-    NProgress.start()
-}
+  NProgress.start();
+};
 Router.onRouteChangeComplete = () => {
-    NProgress.done()
-}
+  NProgress.done();
+};
 Router.onRouteChangeError = () => {
-    NProgress.done()
-}
+  NProgress.done();
+};
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
@@ -49,21 +49,22 @@ export default class MyApp extends App {
     })(document, "script", "facebook-jssdk");
 
     window.twttr = (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0],
+      var js,
+        fjs = d.getElementsByTagName(s)[0],
         t = window.twttr || {};
       if (d.getElementById(id)) return t;
       js = d.createElement(s);
       js.id = id;
       js.src = "https://platform.twitter.com/widgets.js";
       fjs.parentNode.insertBefore(js, fjs);
-    
+
       t._e = [];
       t.ready = function(f) {
         t._e.push(f);
       };
-    
+
       return t;
-    }(document, "script", "twitter-wjs"))
+    })(document, "script", "twitter-wjs");
   }
 
   render() {

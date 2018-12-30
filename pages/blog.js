@@ -7,33 +7,15 @@ import { linkResolver } from "../helpers";
 import BlogPostCard from "../components/BlogPostCard";
 import FeaturePost from "../components/FeaturedPost";
 import BlogPosts from "../components/BlogPosts";
+import Layout from '../components/Layout'
 
 const Index = ({ featuredPost = {} }) => (
-  <>
-    <Head>
-      <link
-        href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
-        rel="stylesheet"
-      />
-    </Head>
+  <Layout paddingTop={'4rem'}>
     <section className="blog">
       <FeaturePost featuredPost={featuredPost}/>
       <BlogPosts/>
     </section>
-    {/* <ul>
-      {posts.map((post, index) => (
-        <li key={index}>
-          <Link
-            as={linkResolver(post)}
-            href={`/blogPost?slug=${post.uid}`}
-            passHref
-          >
-            <a>{post.data.title[0].text}</a>
-          </Link>
-        </li>
-      ))}
-    </ul> */}
-  </>
+  </Layout>
 );
 
 Index.getInitialProps = async () => {

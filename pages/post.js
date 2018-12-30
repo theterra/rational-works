@@ -5,8 +5,10 @@ import { getBlogPostAPI, getBlogPostsAPI } from "../api";
 import linkResolver from "../helpers";
 import htmlSerializer from "../helpers/htmlSerializer";
 
-import "./post.scss";
 import BlogPostCard from "../components/BlogPostCard";
+import Layout from '../components/Layout'
+
+import "./post.scss";
 
 export default class BlogPost extends Component {
   static async getInitialProps(context) {
@@ -43,7 +45,7 @@ export default class BlogPost extends Component {
       //     {/* Here we pass our rich text field to Prismics RichText renderer, along with our linkResolver */}
       //     {RichText.render(post.body, linkResolver)}
       //   </article>
-      <React.Fragment>
+      <Layout paddingTop={'4rem'} hideNavigation>
         <section className="article">
           <div className="article--container">
             <h1 className="article__title">
@@ -87,7 +89,7 @@ export default class BlogPost extends Component {
         >
           Tweet
         </a>
-      </React.Fragment>
+      </Layout>
     );
   }
 }
