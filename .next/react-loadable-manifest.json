@@ -1,7 +1,15 @@
 {
+  "./blogPosts.scss": [
+    {
+      "id": "./components/blogPosts.scss",
+      "name": "./components/blogPosts.scss",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
   "undefined": [
     {
-      "id": 7,
+      "id": 4,
       "name": null,
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
@@ -13,13 +21,13 @@
       "publicPath": "static/chunks/styles.js"
     },
     {
-      "id": 14,
+      "id": 6,
       "name": null,
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     },
     {
-      "id": 6,
+      "id": 9,
       "name": null,
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
@@ -31,22 +39,8 @@
       "publicPath": "static/chunks/styles.js"
     },
     {
-      "id": 4,
+      "id": 14,
       "name": null,
-      "file": "static/chunks/styles.js",
-      "publicPath": "static/chunks/styles.js"
-    },
-    {
-      "id": 12,
-      "name": null,
-      "file": "static/chunks/styles.js",
-      "publicPath": "static/chunks/styles.js"
-    }
-  ],
-  "./blogPosts.scss": [
-    {
-      "id": "./components/blogPosts.scss",
-      "name": "./components/blogPosts.scss",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }
@@ -67,10 +61,10 @@
       "publicPath": "static/chunks/styles.js"
     }
   ],
-  "./layout.scss": [
+  "./constitution.scss": [
     {
-      "id": "./components/layout.scss",
-      "name": "./components/layout.scss",
+      "id": "./pages/constitution.scss",
+      "name": "./pages/constitution.scss",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }
@@ -83,18 +77,10 @@
       "publicPath": "static/chunks/styles.js"
     }
   ],
-  "./index.scss": [
+  "./layout.scss": [
     {
-      "id": "./pages/index.scss",
-      "name": "./pages/index.scss",
-      "file": "static/chunks/styles.js",
-      "publicPath": "static/chunks/styles.js"
-    }
-  ],
-  "./post.scss": [
-    {
-      "id": "./pages/post.scss",
-      "name": "./pages/post.scss",
+      "id": "./components/layout.scss",
+      "name": "./components/layout.scss",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }
