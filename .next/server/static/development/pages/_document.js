@@ -161,33 +161,6 @@ function (_Document) {
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
         href: "/static/css/nprogress.css",
         rel: "stylesheet"
-      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
-        property: "og:url",
-        content: "http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html"
-      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
-        property: "og:type",
-        content: "article"
-      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
-        name: "twitter:card",
-        content: "summary"
-      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
-        name: "twitter:site",
-        content: "@nytimesbits"
-      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
-        name: "twitter:creator",
-        content: "@nickbilton"
-      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
-        property: "og:url",
-        content: "http://bits.blogs.nytimes.com/2011/12/08/a-twitter-for-my-sister/"
-      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
-        property: "og:title",
-        content: "A Twitter for My Sister"
-      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
-        property: "og:description",
-        content: "In the early days, Twitter grew so quickly that it was almost impossible to add new features because engineers spent their time trying to keep the rocket ship from stalling."
-      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
-        property: "og:image",
-        content: "http://graphics8.nytimes.com/images/2011/12/08/technology/bits-newtwitter/bits-newtwitter-tmagArticle.jpg"
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("style", null, "\n          :root {\n            --color-primary: #4285f4;\n            --color-primary-light: #4283ef;\n            --color-primary-dark: #09203f;\n          \n            --color-grey-light-1: #faf9f9;\n            --color-grey-light-2: #f4f2f2;\n            --color-grey-light-3: #f0eeee;\n            --color-grey-light-4: #ccc;\n          \n            --color-grey-dark-1: #333;\n            --color-grey-dark-2: #777;\n            --color-grey-dark-3: #999;\n          \n            --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);\n            --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);\n          \n            --shadow-elevate-2: 0 1px 2px 0 rgba(0, 0, 0, 0.1);\n            --shadow-elevate-8: 0 4px 8px 0 rgba(0, 0, 0, 0.1);\n            --shadow-elevate-12: 0 6px 12px 0 rgba(0, 0, 0, 0.1);\n            --shadow-elevate-16: 0 8px 16px 0 rgba(0, 0, 0, 0.1);\n            --shadow-elevate-24: 0 12px 24px 0 rgba(0, 0, 0, 0.1);\n          \n            --line: 1px solid var(--color-grey-light-2);\n          \n            --large-font: 1.5rem;\n          }\n          \n          * {\n          margin: 0;\n          padding: 0;\n        }\n        \n        *,\n        *::before,\n        *::after {\n          box-sizing: inherit;\n        }\n        \n        html {\n          box-sizing: border-box;\n          font-size: 100%;\n        }\n        \n        body {\n          font-family:Roboto,sans-serif;\n          font-weight: 400;\n          line-height: 1.6;\n          background-image: #fff;\n          background-color: #fff;\n          background-size: cover;\n          background-repeat: no-repeat;\n          min-height: 100vh;\n        }\n          ")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("body", {
         className: "custom_class"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_2__["Main"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_2__["NextScript"], null)));

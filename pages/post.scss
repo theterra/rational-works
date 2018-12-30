@@ -8,8 +8,19 @@
   &--container {
     padding: 2rem 0rem;
     border-bottom: var(--line);
+    min-height: calc(100vh - 4rem) !important;
+
+    &::after {
+      content: "";
+      display: table;
+    }
+
+    &::before {
+      content: "";
+      display: table;
+    }
   }
-  
+
   img {
     background-size: cover;
     max-width: 740px;
@@ -54,5 +65,41 @@
 
   &__line-height--2 {
     line-height: 2 !important;
+  }
+
+  &__share {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    &::after {
+      content: "";
+      display: table;
+    }
+
+    &::before {
+      content: "";
+      display: table;
+    }
+  }
+
+  &__share__wrapper {
+    top: 0%;
+
+    &--fixed {
+      position: fixed !important;
+    }
+
+    &--absolute {
+      position: absolute !important;
+    }
+  }
+
+  &__share__list {
+    list-style: none;
+
+    &__item {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
   }
 }

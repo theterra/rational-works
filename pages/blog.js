@@ -1,22 +1,32 @@
-import Head from "next/head";
-import "./blog.scss";
-import Link from "next/link";
 import { getFeaturedBlogPostAPI } from "../api";
 
-import { linkResolver } from "../helpers";
 import BlogPostCard from "../components/BlogPostCard";
 import FeaturePost from "../components/FeaturedPost";
 import BlogPosts from "../components/BlogPosts";
-import Layout from '../components/Layout'
+import Layout from "../components/Layout";
+import MetaContent from "../components/MetaContent";
+import { getContentUrl } from "../components/common/getContentUrl";
 
-const Index = ({ featuredPost = {} }) => (
-  <Layout paddingTop={'4rem'}>
-    <section className="blog">
-      <FeaturePost featuredPost={featuredPost}/>
-      <BlogPosts/>
-    </section>
-  </Layout>
-);
+import "./blog.scss";
+
+const Index = ({ featuredPost = {} }) => {
+  const [contentUrl] = getContentUrl();
+  return (
+    <Layout paddingTop={"4rem"}>
+      <MetaContent
+        contentType={"article"}
+        contentTitle={"Blog"}
+        contentDescription={"Awesome Articles"}
+        contentImage={"static/assets/images/logo.png"}
+        contentUrl={contentUrl}
+      />
+      <section className="blog">
+        <FeaturePost featuredPost={featuredPost} />
+        <BlogPosts />
+      </section>
+    </Layout>
+  );
+};
 
 Index.getInitialProps = async () => {
   // Here we call the API and request 5 documents

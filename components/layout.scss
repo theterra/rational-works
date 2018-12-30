@@ -28,3 +28,53 @@
     background: rgba(255, 196, 0, 0.75);
   }
 }
+
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-align: center;
+    color: #141414;
+    outline: none;
+    transition: all .3s;
+  }
+
+  &--next {
+    background: #141414;
+    border-radius: 10rem;
+    color: #fff;
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+
+    span {
+      margin-left: 5px;
+    }
+  }
+
+  &.btn--active-link {
+    border-bottom: 1px solid #141414 !important;
+    box-shadow: #141414 0px -2px 0px 0px inset;
+    border-radius: 0; 
+  }
+
+  &:hover {
+    border-bottom: 1px solid #141414 !important;
+    box-shadow: #141414 0px -2px 0px 0px inset;
+    border-radius: 0; 
+  }
+}
+
+.share__button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+}
