@@ -1,53 +1,66 @@
-import Head from "next/head";
+import { Link } from "../routes";
 
-import "./app.scss";
+import Layout from "../components/Layout";
+import PillarCards from "../components/PillarCards";
+import MetaContent from "../components/MetaContent";
+import { getContentUrl } from "../components/common/getContentUrl";
+
+import "./index.scss";
 
 const Index = () => {
+  const [contentUrl] = getContentUrl();
+  const scrollToView = id => {
+    document.querySelector(id).scrollIntoView({
+      behavior: "smooth"
+    });
+  };
+
   return (
-    <div>
-      <Head>
-        <link
-          href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
-          rel="stylesheet"
-        />
-      </Head>
+    <Layout circle paddingTop={"7rem"} showVerticalTitle>
+      <MetaContent
+        contentType={"article"}
+        contentTitle={"Be a rationalist"}
+        contentDescription={
+          "1% people run the world while other 99% follows it. We help you to be in that 1%."
+        }
+        contentImage={"/static/assets/images/logo.png"}
+        contentUrl={contentUrl}
+      />
       <header className="header">
-        <nav className="nav">
-          <div className="nav--left">
-            {/* <img className="nav__logo" src="/static/assets/images/logo.png"/> */}
-          </div>
-          <div className="nav--right">
-            <a>About</a>
-            <a>Blog</a>
-            <a>Faqs</a>
-            <a>Terms and Conditions</a>
-          </div>
-        </nav>
         <div className="header__content">
           <div className="header__content--left">
-            We are an Organisation that helps people change their perception
-            towards how to lead life. We define purpose of life. We explain
-            people how the Universe Works. We show people how the goals and
-            dreams are manifested.
-          </div>
-          <div className="header__content--right">
+            <p className="header__content__text header__content__text--large">
+              1% people run the world while other 99% follows it.
+              <br />
+              <span className="highlight">We help you to be in that 1%</span>
+            </p>
+            <p className="header__content__text header__content__text--small">
+              We are an Organisation that helps people change their perception
+              towards how to lead life. We define purpose of life. We explain
+              people how the Universe Works. We show people how the goals and
+              dreams are manifested
+            </p>
             <div>
-              1% people run the world while other 99% follows it. We help you to
-              be in that 1%.
-            </div>
-            <div>
-              <a className="btn btn--next">
+              <a
+                className="btn btn--next"
+                onClick={() => scrollToView("#about")}
+              >
                 Learn more<span>&rarr;</span>
               </a>
             </div>
           </div>
+          <div className="header__content--right">
+            <div className="show__images">
+              <div className="show__images__item" />
+            </div>
+          </div>
         </div>
-        <h1 className="header__title-left">#rational</h1>
-        <h1 className="header__title-top">works</h1>
+        {/* <h1 className="header__title-left">#rational</h1>
+        <h1 className="header__title-top">works</h1> */}
       </header>
 
       <section className="section-left">
-        <div className="content">
+        <div className="content" id="about">
           <div className="content__desc">
             <div className="content__item">
               <p className="content__item--head">
@@ -58,7 +71,9 @@ const Index = () => {
               </p>
             </div>
             <div className="content__item">
-              <p className="content__item--head">What is Rationalism?</p>
+              <p className="content__item--head">
+                What is <span className="highlight">Rationalism</span>?
+              </p>
               <p className="content__item--sub">
                 Rationalism is a way of life. To be a Rationalist You must
                 follow our Constitution. Our Constitution Comprises of 13
@@ -66,46 +81,88 @@ const Index = () => {
               </p>
             </div>
           </div>
-          <div className="content__bloat" />
+          <div className="content__bloat">
+            <ul className="content__bloat__list">
+              <li className="content__bloat__list__item">
+                <Link href="/constitution">
+                  <span className="highlight__hover">Atheism</span>
+                </Link>
+              </li>
+              <li className="content__bloat__list__item">
+                <Link href="/constitution">
+                  <span className="highlight__hover">Law of Attraction</span>
+                </Link>
+              </li>
+              <li className="content__bloat__list__item">
+                <Link href="/constitution">
+                  <span className="highlight__hover">Positivity</span>
+                </Link>
+              </li>
+              <li className="content__bloat__list__item">
+                <Link href="/constitution">
+                  <span className="highlight__hover">Objectivism</span>
+                </Link>
+              </li>
+              <li className="content__bloat__list__item">
+                <Link href="/constitution">
+                  <span className="highlight__hover">Happiness</span>
+                </Link>
+              </li>
+              <li className="content__bloat__list__item">
+                <Link href="/constitution">
+                  <span className="highlight__hover">Discipline</span>
+                </Link>
+              </li>
+              <li className="content__bloat__list__item">
+                <Link href="/constitution">
+                  <span className="highlight__hover">Fearless</span>
+                </Link>
+              </li>
+              <li className="content__bloat__list__item">
+                <Link href="/constitution">
+                  <span className="highlight__hover">Social</span>
+                </Link>
+              </li>
+              <li className="content__bloat__list__item">
+                <Link href="/constitution">
+                  <span className="highlight__hover">Behaviour</span>
+                </Link>
+              </li>
+              <li className="content__bloat__list__item">
+                <Link href="/constitution">
+                  <span className="highlight__hover">Healthy</span>
+                </Link>
+              </li>
+              <li className="content__bloat__list__item">
+                <Link href="/constitution">
+                  <span className="highlight__hover">Determination</span>
+                </Link>
+              </li>
+              <li className="content__bloat__list__item">
+                <Link href="/constitution">
+                  <span className="highlight__hover">Service</span>
+                </Link>
+              </li>
+              <li className="content__bloat__list__item">
+                <Link href="/constitution">
+                  <span className="highlight__hover">Freedom</span>
+                </Link>
+              </li>
+            </ul>
+            {/* <div style={{ display: "flex", justifyContent: "center"}}>
+              <Link href="/constitution">
+                <span className="read__more">Learn more</span>
+              </Link> <span>&rarr;</span>
+            </div> */}
+          </div>
         </div>
       </section>
 
       <section className="section-principles">
-        <div className="principles__container">
-          <div className="principles__item">
-            <div className="principles__title">13 Independent Pillars</div>
-          </div>
-          {Array.from(Array(13)).map(item => {
-            return (
-              <div className="principles__item">
-                <div
-                  className="principles__item__logo-box"
-                  style={{
-                    backgroundImage: "url(/static/assets/images/universe.jpg)"
-                  }}
-                >
-                  {/* <img
-                   
-                    className="principles__item__logo"
-                   /> */}
-                </div>
-                <h4 className="principles__item__header">
-                  <span className="principles__item__header--text">
-                    Atheism
-                  </span>
-                </h4>
-                <div className="principles__item__content">
-                  Rationalism is a way of life. To be a Rationalist You must
-                  follow our Constitution. Our Constitution Comprises of 8
-                  Independent Pillars
-                </div>
-              </div>
-            );
-          })}
-          <div className="principles__item" />
+        <div className="principles">
+          <PillarCards />
         </div>
       </section>
-
       <section className="section-quotes">
         <div className="quotes">
           <div className="quotes__item">
@@ -116,29 +173,29 @@ const Index = () => {
           </div>
           <div className="quotes__item">
             <div className="quotes__item__text">
-            It takes no time for the universe to manifest
+              It takes no time for the universe to manifest
             </div>
           </div>
           <div className="quotes__item">
             <div className="quotes__item__text">
-            Falling down is an accident. Staying down is a choice.
+              Falling down is an accident. Staying down is a choice.
             </div>
           </div>
-          <div className="quotes__item" style={{opacity: 0}}>
-          <div className="quotes__item__text"></div>
+          <div className="quotes__item" style={{ opacity: 0, minHeight: 0}}>
+            <div className="quotes__item__text" />
           </div>
         </div>
       </section>
 
-      <section className="section-questions">
-            <div className="questions">
-                <div className="questions__item">
-                    <div className="questions__item--text"></div>
-                    <div className="questions__item--icon"></div>
-                </div>
-            </div>
-      </section>
-    </div>
+      {/* <section className="section-questions">
+        <div className="questions">
+          <div className="questions__item">
+            <div className="questions__item--text" />
+            <div className="questions__item--icon" />
+          </div>
+        </div>
+      </section> */}
+    </Layout>
   );
 };
 

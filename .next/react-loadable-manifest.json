@@ -7,10 +7,10 @@
       "publicPath": "static/chunks/0.js"
     }
   ],
-  "./app.scss": [
+  "./header.scss": [
     {
-      "id": "./pages/app.scss",
-      "name": "./pages/app.scss",
+      "id": "./components/header.scss",
+      "name": "./components/header.scss",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }
@@ -19,6 +19,48 @@
     {
       "id": 4,
       "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 5,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 6,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 7,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./footer.scss": [
+    {
+      "id": "./components/footer.scss",
+      "name": "./components/footer.scss",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./layout.scss": [
+    {
+      "id": "./components/layout.scss",
+      "name": "./components/layout.scss",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./index.scss": [
+    {
+      "id": "./pages/index.scss",
+      "name": "./pages/index.scss",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }
