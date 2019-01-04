@@ -1,18 +1,37 @@
-import Link from "next/link";
+import { Link } from "../routes";
 
 import Layout from "../components/Layout";
+import PillarCards from "../components/PillarCards";
+import MetaContent from "../components/MetaContent";
+import { getContentUrl } from "../components/common/getContentUrl";
 
 import "./index.scss";
 
 const Index = () => {
+  const [contentUrl] = getContentUrl();
+  const scrollToView = id => {
+    document.querySelector(id).scrollIntoView({
+      behavior: "smooth"
+    });
+  };
+
   return (
-    <Layout circle paddingTop={"7rem"}>
+    <Layout circle paddingTop={"7rem"} showVerticalTitle>
+      <MetaContent
+        contentType={"article"}
+        contentTitle={"Be a rationalist"}
+        contentDescription={
+          "1% people run the world while other 99% follows it. We help you to be in that 1%."
+        }
+        contentImage={"/static/assets/images/logo.png"}
+        contentUrl={contentUrl}
+      />
       <header className="header">
         <div className="header__content">
           <div className="header__content--left">
             <p className="header__content__text header__content__text--large">
               1% people run the world while other 99% follows it.
-              <br />{" "}
+              <br />
               <span className="highlight">We help you to be in that 1%</span>
             </p>
             <p className="header__content__text header__content__text--small">
@@ -22,15 +41,18 @@ const Index = () => {
               dreams are manifested
             </p>
             <div>
-              <a className="btn btn--next">
+              <a
+                className="btn btn--next"
+                onClick={() => scrollToView("#about")}
+              >
                 Learn more<span>&rarr;</span>
               </a>
             </div>
           </div>
           <div className="header__content--right">
-            {/* <div className="show__images">
+            <div className="show__images">
               <div className="show__images__item" />
-            </div> */}
+            </div>
           </div>
         </div>
         {/* <h1 className="header__title-left">#rational</h1>
@@ -38,7 +60,7 @@ const Index = () => {
       </header>
 
       <section className="section-left">
-        <div className="content">
+        <div className="content" id="about">
           <div className="content__desc">
             <div className="content__item">
               <p className="content__item--head">
@@ -127,15 +149,20 @@ const Index = () => {
                 </Link>
               </li>
             </ul>
-            <div style={{ display: "flex", justifyContent: "center"}}>
+            {/* <div style={{ display: "flex", justifyContent: "center"}}>
               <Link href="/constitution">
                 <span className="read__more">Learn more</span>
               </Link> <span>&rarr;</span>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
 
+      <section className="section-principles">
+        <div className="principles">
+          <PillarCards />
+        </div>
+      </section>
       <section className="section-quotes">
         <div className="quotes">
           <div className="quotes__item">
@@ -154,7 +181,7 @@ const Index = () => {
               Falling down is an accident. Staying down is a choice.
             </div>
           </div>
-          <div className="quotes__item" style={{ opacity: 0 }}>
+          <div className="quotes__item" style={{ opacity: 0, minHeight: 0}}>
             <div className="quotes__item__text" />
           </div>
         </div>

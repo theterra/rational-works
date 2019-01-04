@@ -61,7 +61,7 @@ const BlogPost = props => {
     : "/static/assets/images/no-image.png";
 
   return (
-    <Layout paddingTop={"4rem"} hideNavigation>
+    <Layout paddingTop={"4rem"} hideNavigation shadowLine>
       <MetaContent
         contentType={"article"}
         contentTitle={title}

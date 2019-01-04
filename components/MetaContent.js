@@ -26,6 +26,8 @@ const MetaContent = ({
       <meta property="og:title" content={contentTitle} />
       <meta property="og:description" content={contentDescription} />
       <meta property="og:image" content={contentImage} />
+      <meta property="og:image:width" content="600" />
+      <meta property="og:image:height" content="300" />
     </Head>
   );
 };

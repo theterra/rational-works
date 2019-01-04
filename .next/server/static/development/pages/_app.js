@@ -109,8 +109,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/app */ "next/app");
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../routes */ "./routes.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! nprogress */ "nprogress");
 /* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(nprogress__WEBPACK_IMPORTED_MODULE_4__);
 
@@ -142,15 +142,15 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-next_router__WEBPACK_IMPORTED_MODULE_3___default.a.onRouteChangeStart = function () {
+_routes__WEBPACK_IMPORTED_MODULE_3__["Router"].onRouteChangeStart = function () {
   nprogress__WEBPACK_IMPORTED_MODULE_4___default.a.start();
 };
 
-next_router__WEBPACK_IMPORTED_MODULE_3___default.a.onRouteChangeComplete = function () {
+_routes__WEBPACK_IMPORTED_MODULE_3__["Router"].onRouteChangeComplete = function () {
   nprogress__WEBPACK_IMPORTED_MODULE_4___default.a.done();
 };
 
-next_router__WEBPACK_IMPORTED_MODULE_3___default.a.onRouteChangeError = function () {
+_routes__WEBPACK_IMPORTED_MODULE_3__["Router"].onRouteChangeError = function () {
   nprogress__WEBPACK_IMPORTED_MODULE_4___default.a.done();
 };
 
@@ -272,6 +272,19 @@ function (_App) {
 
 /***/ }),
 
+/***/ "./routes.js":
+/*!*******************!*\
+  !*** ./routes.js ***!
+  \*******************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var routes = __webpack_require__(/*! next-routes */ "next-routes");
+
+module.exports = routes().add('index', '/').add('blog', '/blog').add('post', '/blog/:slug').add('constitution', '/constitution');
+
+/***/ }),
+
 /***/ 0:
 /*!*****************************!*\
   !*** multi ./pages/_app.js ***!
@@ -295,6 +308,17 @@ module.exports = require("@babel/runtime/regenerator");
 
 /***/ }),
 
+/***/ "next-routes":
+/*!******************************!*\
+  !*** external "next-routes" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next-routes");
+
+/***/ }),
+
 /***/ "next/app":
 /*!***************************!*\
   !*** external "next/app" ***!
@@ -303,17 +327,6 @@ module.exports = require("@babel/runtime/regenerator");
 /***/ (function(module, exports) {
 
 module.exports = require("next/app");
-
-/***/ }),
-
-/***/ "next/router":
-/*!******************************!*\
-  !*** external "next/router" ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("next/router");
 
 /***/ }),
 

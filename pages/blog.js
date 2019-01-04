@@ -1,6 +1,5 @@
 import { getFeaturedBlogPostAPI } from "../api";
 
-import BlogPostCard from "../components/BlogPostCard";
 import FeaturePost from "../components/FeaturedPost";
 import BlogPosts from "../components/BlogPosts";
 import Layout from "../components/Layout";
@@ -9,15 +8,15 @@ import { getContentUrl } from "../components/common/getContentUrl";
 
 import "./blog.scss";
 
-const Index = ({ featuredPost = {} }) => {
+const Blog = ({ featuredPost = {} }) => {
   const [contentUrl] = getContentUrl();
   return (
-    <Layout paddingTop={"4rem"}>
+    <Layout paddingTop={"4rem"} shadowLine>
       <MetaContent
         contentType={"article"}
         contentTitle={"Blog"}
         contentDescription={"Awesome Articles"}
-        contentImage={"static/assets/images/logo.png"}
+        contentImage={"/static/assets/images/logo.png"}
         contentUrl={contentUrl}
       />
       <section className="blog">
@@ -28,14 +27,7 @@ const Index = ({ featuredPost = {} }) => {
   );
 };
 
-Index.getInitialProps = async () => {
-  // Here we call the API and request 5 documents
-  // const response = await getBlogPostsAPI({ pageSize: 5 });
-  // console.log(response.results[0].data.author);
-  // return {
-  //   posts: response.results
-  // };
-
+Blog.getInitialProps = async () => {
   const response = await getFeaturedBlogPostAPI({ pageSize: 1 });
   console.log(response);
   return {
@@ -43,4 +35,4 @@ Index.getInitialProps = async () => {
   };
 };
 
-export default Index;
+export default Blog;

@@ -1,18 +1,19 @@
-import { withRouter } from 'next/router'
+import { Router } from '../routes'
+import {withRouter} from 'next/router'
 import classnames from 'classnames'
 
 const ActiveLink = ({ children, router, href }) => {
-  const style = classnames('btn', {
+  const style = classnames('btn btn-link', {
     'btn--active-link': router.pathname === href
   })
 
   const handleClick = (e) => {
     e.preventDefault()
-    router.push(href)
+    Router.pushRoute(href).then(() => window.scrollTo(0, 0));
   }
-
+  
   return (
-    <a href={href} onClick={handleClick} className={style}>
+    <a  onClick={handleClick} className={style}>
       {children}
     </a>
   )

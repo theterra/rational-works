@@ -10,6 +10,35 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="static/favicon/apple-touch-icon.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="static/favicon/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="static/favicon/favicon-16x16.png"
+          />
+          <link
+            rel="mask-icon"
+            href="static/favicon/safari-pinned-tab.svg"
+            color="#5bbad5"
+          />
+          <meta name="msapplication-TileColor" content="#141414" />
+          <meta name="theme-color" content="#141414" />
+          <link rel="manifest" href="static/manifest.json" />
           <link
             href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
             rel="stylesheet"
@@ -59,6 +88,7 @@ export default class MyDocument extends Document {
         html {
           box-sizing: border-box;
           font-size: 100%;
+          // scroll-behavior: smooth;
         }
         
         body {
@@ -71,6 +101,15 @@ export default class MyDocument extends Document {
           background-repeat: no-repeat;
           min-height: 100vh;
         }
+
+        @media only screen and (max-width: 37.5em) {
+          html {
+            box-sizing: border-box;
+            font-size: 80%;
+          }
+          
+        }
+
           `}</style>
         </Head>
         <body className="custom_class">

@@ -154,14 +154,44 @@ function (_Document) {
   _createClass(MyDocument, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("html", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_2__["Head"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("html", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_2__["Head"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1.0"
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "static/favicon/apple-touch-icon.png"
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "static/favicon/favicon-32x32.png"
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: "static/favicon/favicon-16x16.png"
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
+        rel: "mask-icon",
+        href: "static/favicon/safari-pinned-tab.svg",
+        color: "#5bbad5"
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
+        name: "msapplication-TileColor",
+        content: "#141414"
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
+        name: "theme-color",
+        content: "#141414"
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
+        rel: "manifest",
+        href: "static/manifest.json"
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
         href: "https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i",
         rel: "stylesheet",
         defer: true
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
         href: "/static/css/nprogress.css",
         rel: "stylesheet"
-      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("style", null, "\n          :root {\n            --color-primary: #4285f4;\n            --color-primary-light: #4283ef;\n            --color-primary-dark: #09203f;\n          \n            --color-grey-light-1: #faf9f9;\n            --color-grey-light-2: #f4f2f2;\n            --color-grey-light-3: #f0eeee;\n            --color-grey-light-4: #ccc;\n          \n            --color-grey-dark-1: #333;\n            --color-grey-dark-2: #777;\n            --color-grey-dark-3: #999;\n          \n            --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);\n            --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);\n          \n            --shadow-elevate-2: 0 1px 2px 0 rgba(0, 0, 0, 0.1);\n            --shadow-elevate-8: 0 4px 8px 0 rgba(0, 0, 0, 0.1);\n            --shadow-elevate-12: 0 6px 12px 0 rgba(0, 0, 0, 0.1);\n            --shadow-elevate-16: 0 8px 16px 0 rgba(0, 0, 0, 0.1);\n            --shadow-elevate-24: 0 12px 24px 0 rgba(0, 0, 0, 0.1);\n          \n            --line: 1px solid var(--color-grey-light-2);\n          \n            --large-font: 1.5rem;\n          }\n          \n          * {\n          margin: 0;\n          padding: 0;\n        }\n        \n        *,\n        *::before,\n        *::after {\n          box-sizing: inherit;\n        }\n        \n        html {\n          box-sizing: border-box;\n          font-size: 100%;\n        }\n        \n        body {\n          font-family:Roboto,sans-serif;\n          font-weight: 400;\n          line-height: 1.6;\n          background-image: #fff;\n          background-color: #fff;\n          background-size: cover;\n          background-repeat: no-repeat;\n          min-height: 100vh;\n        }\n          ")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("body", {
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("style", null, "\n          :root {\n            --color-primary: #4285f4;\n            --color-primary-light: #4283ef;\n            --color-primary-dark: #09203f;\n          \n            --color-grey-light-1: #faf9f9;\n            --color-grey-light-2: #f4f2f2;\n            --color-grey-light-3: #f0eeee;\n            --color-grey-light-4: #ccc;\n          \n            --color-grey-dark-1: #333;\n            --color-grey-dark-2: #777;\n            --color-grey-dark-3: #999;\n          \n            --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);\n            --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);\n          \n            --shadow-elevate-2: 0 1px 2px 0 rgba(0, 0, 0, 0.1);\n            --shadow-elevate-8: 0 4px 8px 0 rgba(0, 0, 0, 0.1);\n            --shadow-elevate-12: 0 6px 12px 0 rgba(0, 0, 0, 0.1);\n            --shadow-elevate-16: 0 8px 16px 0 rgba(0, 0, 0, 0.1);\n            --shadow-elevate-24: 0 12px 24px 0 rgba(0, 0, 0, 0.1);\n          \n            --line: 1px solid var(--color-grey-light-2);\n          \n            --large-font: 1.5rem;\n          }\n          \n          * {\n          margin: 0;\n          padding: 0;\n        }\n        \n        *,\n        *::before,\n        *::after {\n          box-sizing: inherit;\n        }\n        \n        html {\n          box-sizing: border-box;\n          font-size: 100%;\n          // scroll-behavior: smooth;\n        }\n        \n        body {\n          font-family:Roboto,sans-serif;\n          font-weight: 400;\n          line-height: 1.6;\n          background-image: #fff;\n          background-color: #fff;\n          background-size: cover;\n          background-repeat: no-repeat;\n          min-height: 100vh;\n        }\n\n        @media only screen and (max-width: 37.5em) {\n          html {\n            box-sizing: border-box;\n            font-size: 80%;\n          }\n          \n        }\n\n          ")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("body", {
         className: "custom_class"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_2__["Main"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_2__["NextScript"], null)));
     }

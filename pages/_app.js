@@ -1,7 +1,7 @@
 import React from "react";
 import App, { Container } from "next/app";
 
-import Router from "next/router";
+import { Router } from "../routes";
 import NProgress from "nprogress";
 
 Router.onRouteChangeStart = () => {

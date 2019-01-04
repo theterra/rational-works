@@ -1,5 +1,5 @@
 function linkResolver(doc) {
-  if (doc.type === "scopeblog") {
+  if (doc.type === "blog_posts") {
     return `/blog/${doc.uid}`;
   }
   return "/";

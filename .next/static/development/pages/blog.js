@@ -4,7 +4,7 @@
 /*!**********************!*\
   !*** ./api/index.js ***!
   \**********************/
-/*! exports provided: getBlogPostsAPI, getBlogPostAPI, getFeaturedBlogPostAPI, getConstitutionAPI */
+/*! exports provided: getBlogPostsAPI, getBlogPostAPI, getFeaturedBlogPostAPI, getConstitutionAPI, getFaqsAPI */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13,6 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBlogPostAPI", function() { return getBlogPostAPI; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFeaturedBlogPostAPI", function() { return getFeaturedBlogPostAPI; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getConstitutionAPI", function() { return getConstitutionAPI; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFaqsAPI", function() { return getFaqsAPI; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prismic_javascript__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prismic-javascript */ "./node_modules/prismic-javascript/dist/prismic-javascript.min.js");
@@ -49,8 +50,8 @@ function () {
           case 3:
             API = _context.sent;
             _context.next = 6;
-            return API.query(prismic_javascript__WEBPACK_IMPORTED_MODULE_1___default.a.Predicates.at("document.type", "scopeblog"), _objectSpread({
-              orderings: "[my.scopeblog.date desc]"
+            return API.query(prismic_javascript__WEBPACK_IMPORTED_MODULE_1___default.a.Predicates.at("document.type", "blog_posts"), _objectSpread({
+              orderings: "[my.blog_posts.date desc]"
             }, params));
 
           case 6:
@@ -94,7 +95,7 @@ function () {
             API = _context2.sent;
             _context2.next = 6;
             return API.query(prismic_javascript__WEBPACK_IMPORTED_MODULE_1___default.a.Predicates.at("document.tags", ["featured"]), _objectSpread({
-              orderings: "[my.scopeblog.date desc]"
+              orderings: "[my.blog_posts.date desc]"
             }, params));
 
           case 6:
@@ -137,7 +138,7 @@ function () {
           case 3:
             API = _context3.sent;
             _context3.next = 6;
-            return API.query(prismic_javascript__WEBPACK_IMPORTED_MODULE_1___default.a.Predicates.at("my.scopeblog.uid", slug));
+            return API.query(prismic_javascript__WEBPACK_IMPORTED_MODULE_1___default.a.Predicates.at("my.blog_posts.uid", slug));
 
           case 6:
             response = _context3.sent;
@@ -180,7 +181,7 @@ function () {
           case 3:
             API = _context4.sent;
             _context4.next = 6;
-            return API.query(prismic_javascript__WEBPACK_IMPORTED_MODULE_1___default.a.Predicates.at("document.type", "consititution"), _objectSpread({}, params));
+            return API.query(prismic_javascript__WEBPACK_IMPORTED_MODULE_1___default.a.Predicates.at("document.type", "constitution"), _objectSpread({}, params));
 
           case 6:
             response = _context4.sent;
@@ -204,6 +205,48 @@ function () {
   };
 }();
 
+var getFaqsAPI =
+/*#__PURE__*/
+function () {
+  var _ref5 = _asyncToGenerator(
+  /*#__PURE__*/
+  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5(params) {
+    var API, response;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
+      while (1) {
+        switch (_context5.prev = _context5.next) {
+          case 0:
+            _context5.prev = 0;
+            _context5.next = 3;
+            return prismic_javascript__WEBPACK_IMPORTED_MODULE_1___default.a.api(_config__WEBPACK_IMPORTED_MODULE_2__["PRISMIC_API_URL"]);
+
+          case 3:
+            API = _context5.sent;
+            _context5.next = 6;
+            return API.query(prismic_javascript__WEBPACK_IMPORTED_MODULE_1___default.a.Predicates.at("document.type", "quest"), _objectSpread({}, params));
+
+          case 6:
+            response = _context5.sent;
+            return _context5.abrupt("return", response);
+
+          case 10:
+            _context5.prev = 10;
+            _context5.t0 = _context5["catch"](0);
+            return _context5.abrupt("return", _context5.t0);
+
+          case 13:
+          case "end":
+            return _context5.stop();
+        }
+      }
+    }, _callee5, this, [[0, 10]]);
+  }));
+
+  return function getFaqsAPI(_x5) {
+    return _ref5.apply(this, arguments);
+  };
+}();
+
 
 
 /***/ }),
@@ -219,10 +262,13 @@ function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "./node_modules/next/router.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../routes */ "./routes.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "./node_modules/next/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -231,23 +277,24 @@ var ActiveLink = function ActiveLink(_ref) {
   var children = _ref.children,
       router = _ref.router,
       href = _ref.href;
-  var style = classnames__WEBPACK_IMPORTED_MODULE_2___default()('btn', {
+  var style = classnames__WEBPACK_IMPORTED_MODULE_3___default()('btn btn-link', {
     'btn--active-link': router.pathname === href
   });
 
   var handleClick = function handleClick(e) {
     e.preventDefault();
-    router.push(href);
+    _routes__WEBPACK_IMPORTED_MODULE_1__["Router"].pushRoute(href).then(function () {
+      return window.scrollTo(0, 0);
+    });
   };
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: href,
     onClick: handleClick,
     className: style
   }, children);
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(ActiveLink));
+/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(ActiveLink));
 
 /***/ }),
 
@@ -266,8 +313,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prismic_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prismic_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/router */ "./node_modules/next/router.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../routes */ "./routes.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../helpers */ "./helpers/index.js");
 /* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_helpers__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _blogPosts_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./blogPosts.scss */ "./components/blogPosts.scss");
@@ -280,7 +327,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routeToPost = function routeToPost(data) {
-  return next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push(Object(_helpers__WEBPACK_IMPORTED_MODULE_4__["linkResolver"])(data));
+  return _routes__WEBPACK_IMPORTED_MODULE_3__["Router"].push(Object(_helpers__WEBPACK_IMPORTED_MODULE_4__["linkResolver"])(data));
 };
 
 var BlogPostCard = function BlogPostCard(_ref) {
@@ -294,6 +341,8 @@ var BlogPostCard = function BlogPostCard(_ref) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blog__posts__item"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "blog__posts__item--wrapper"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blog__posts__image-box"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blog__posts__image",
@@ -304,6 +353,8 @@ var BlogPostCard = function BlogPostCard(_ref) {
       return routeToPost(post);
     }
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "padding--2"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blog__posts__meta"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "date"
@@ -319,13 +370,13 @@ var BlogPostCard = function BlogPostCard(_ref) {
     onClick: function onClick() {
       return routeToPost(post);
     }
-  }, data.summary.length ? data.summary[0].text : "")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, data.summary.length ? data.summary[0].text.substr(0, 140) : "")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     onClick: function onClick() {
       return routeToPost(post);
     }
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "read__more"
-  }, "Read more"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "\u2192")));
+  }, "Read more"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "\u2192")))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (BlogPostCard);
@@ -370,11 +421,12 @@ var BlogPosts = function BlogPosts() {
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     Object(_api___WEBPACK_IMPORTED_MODULE_2__["getBlogPostsAPI"])({
-      pageSize: 5
+      pageSize: 100
     }).then(function (response) {
       postsHandler(response.results);
     });
   }, []);
+  var extraCards = Math.ceil(3 - posts.length % 3);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     className: "blog__posts"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -383,6 +435,15 @@ var BlogPosts = function BlogPosts() {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BlogPostCard__WEBPACK_IMPORTED_MODULE_1__["default"], {
       key: index,
       post: post
+    });
+  }), extraCards > 0 && Array.from(Array(extraCards).fill("extraCards")).map(function (item, index) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "blog__posts__item",
+      key: "".concat(item).concat(index),
+      style: {
+        opacity: 0,
+        minHeight: 0
+      }
     });
   })));
 };
@@ -402,8 +463,8 @@ var BlogPosts = function BlogPosts() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../routes */ "./routes.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helpers */ "./helpers/index.js");
 /* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_helpers__WEBPACK_IMPORTED_MODULE_2__);
 
@@ -412,21 +473,22 @@ __webpack_require__.r(__webpack_exports__);
 
 var FeaturedPost = function FeaturedPost(_ref) {
   var featuredPost = _ref.featuredPost;
+  if (!featuredPost.data) return null;
   var data = featuredPost.data;
   console.log(JSON.stringify(data));
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blog__feature"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blog__feature--container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    href: Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["linkResolver"])(featuredPost)
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blog__feature__content"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
     className: "blog__feature__title"
   }, data.title.length ? data.title[0].text : ""), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "blog__feature__desc"
-  }, data.summary.length ? data.summary[0].text : ""), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["linkResolver"])(featuredPost)
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  }, data.summary.length ? data.summary[0].text : ""), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "read__more"
   }, "Read more"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "\u2192")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blog__feature__image-box"
@@ -485,8 +547,8 @@ var Footer = function Footer() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../routes */ "./routes.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _ActiveLink__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ActiveLink */ "./components/ActiveLink.js");
@@ -518,23 +580,28 @@ var Header = function Header(props) {
 
   var navStyle = classnames__WEBPACK_IMPORTED_MODULE_2___default()("nav", {
     hidden: hideNav,
-    nav__fix: fixNav
+    nav__fix: props.shadowLine || fixNav,
+    nav__line: true
   });
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
     className: navStyle,
     ref: navRef
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     href: "/"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "nav__logo",
     src: "/static/assets/images/logo.png"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav--right"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "nav__links"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ActiveLink__WEBPACK_IMPORTED_MODULE_3__["default"], {
     href: "/blog"
   }, "Blog")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "nav--right"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "nav__links"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ActiveLink__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    href: "/faqs"
+  }, "Faqs")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "nav__share__links"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "nav__share__links__item"
@@ -544,8 +611,8 @@ var Header = function Header(props) {
     target: "__blank"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
     viewBox: "0 0 30 30",
-    width: "30px",
-    height: "30px"
+    width: "26px",
+    height: "26px"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
     d: "M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h10v-9h-3v-3h3v-1.611C16,9.339,17.486,8,20.021,8 c1.214,0,1.856,0.09,2.16,0.131V11h-1.729C19.376,11,19,11.568,19,12.718V14h3.154l-0.428,3H19v9h5c1.105,0,2-0.895,2-2V6 C26,4.895,25.104,4,24,4z"
   }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -556,10 +623,36 @@ var Header = function Header(props) {
     target: "__blank"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
     viewBox: "0 0 30 30",
-    width: "30px",
-    height: "30px"
+    width: "26px",
+    height: "26px"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
     d: "M28,6.937c-0.957,0.425-1.985,0.711-3.064,0.84c1.102-0.66,1.947-1.705,2.345-2.951c-1.03,0.611-2.172,1.055-3.388,1.295 c-0.973-1.037-2.359-1.685-3.893-1.685c-2.946,0-5.334,2.389-5.334,5.334c0,0.418,0.048,0.826,0.138,1.215 c-4.433-0.222-8.363-2.346-10.995-5.574C3.351,6.199,3.088,7.115,3.088,8.094c0,1.85,0.941,3.483,2.372,4.439 c-0.874-0.028-1.697-0.268-2.416-0.667c0,0.023,0,0.044,0,0.067c0,2.585,1.838,4.741,4.279,5.23 c-0.447,0.122-0.919,0.187-1.406,0.187c-0.343,0-0.678-0.034-1.003-0.095c0.679,2.119,2.649,3.662,4.983,3.705 c-1.825,1.431-4.125,2.284-6.625,2.284c-0.43,0-0.855-0.025-1.273-0.075c2.361,1.513,5.164,2.396,8.177,2.396 c9.812,0,15.176-8.128,15.176-15.177c0-0.231-0.005-0.461-0.015-0.69C26.38,8.945,27.285,8.006,28,6.937z"
+  }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "nav__share__links__item"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "share__button",
+    href: "https://www.youtube.com/channel/UCaagb4tsCNxLTidymO7K-EA",
+    target: "__blank"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 30 30",
+    width: "26px",
+    height: "26px"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M 15 4 C 10.814 4 5.3808594 5.0488281 5.3808594 5.0488281 L 5.3671875 5.0644531 C 3.4606632 5.3693645 2 7.0076245 2 9 L 2 15 L 2 15.001953 L 2 21 L 2 21.001953 A 4 4 0 0 0 5.3769531 24.945312 L 5.3808594 24.951172 C 5.3808594 24.951172 10.814 26.001953 15 26.001953 C 19.186 26.001953 24.619141 24.951172 24.619141 24.951172 L 24.621094 24.949219 A 4 4 0 0 0 28 21.001953 L 28 21 L 28 15.001953 L 28 15 L 28 9 A 4 4 0 0 0 24.623047 5.0546875 L 24.619141 5.0488281 C 24.619141 5.0488281 19.186 4 15 4 z M 12 10.398438 L 20 15 L 12 19.601562 L 12 10.398438 z"
+  }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "nav__share__links__item"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "share__button",
+    href: "https://www.instagram.com/rationalworks/",
+    target: "__blank"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 30 30",
+    width: "26px",
+    height: "26px"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M 9.9980469 3 C 6.1390469 3 3 6.1419531 3 10.001953 L 3 20.001953 C 3 23.860953 6.1419531 27 10.001953 27 L 20.001953 27 C 23.860953 27 27 23.858047 27 19.998047 L 27 9.9980469 C 27 6.1390469 23.858047 3 19.998047 3 L 9.9980469 3 z M 22 7 C 22.552 7 23 7.448 23 8 C 23 8.552 22.552 9 22 9 C 21.448 9 21 8.552 21 8 C 21 7.448 21.448 7 22 7 z M 15 9 C 18.309 9 21 11.691 21 15 C 21 18.309 18.309 21 15 21 C 11.691 21 9 18.309 9 15 C 9 11.691 11.691 9 15 9 z M 15 11 A 4 4 0 0 0 11 15 A 4 4 0 0 0 15 19 A 4 4 0 0 0 19 15 A 4 4 0 0 0 15 11 z"
   })))))))), props.children);
 };
 
@@ -643,10 +736,17 @@ var Layout = function Layout(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: props.circle ? "circle-wrapper" : ""
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    hideNavigation: props.hideNavigation
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    hideNavigation: props.hideNavigation,
+    shadowLine: props.shadowLine
+  }), props.showVerticalTitle && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "vertical"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+    className: "vertical__title"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Rational Works"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     style: {
-      paddingTop: props.paddingTop
+      paddingTop: props.paddingTop,
+      overflow: "hidden",
+      height: '100%'
     },
     id: "wrapper"
   }, props.children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], null));
@@ -721,6 +821,12 @@ var MetaContent = function MetaContent(_ref) {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
     property: "og:image",
     content: contentImage
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
+    property: "og:image:width",
+    content: "600"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
+    property: "og:image:height",
+    content: "300"
   }));
 };
 
@@ -776,7 +882,7 @@ var getContentUrl = function getContentUrl() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PRISMIC_API_URL", function() { return PRISMIC_API_URL; });
-var PRISMIC_API_URL = 'https://scope-test.prismic.io/api/v2';
+var PRISMIC_API_URL = 'https://rationalworks.prismic.io/api/v2';
 
 /***/ }),
 
@@ -788,7 +894,7 @@ var PRISMIC_API_URL = 'https://scope-test.prismic.io/api/v2';
 /***/ (function(module, exports) {
 
 function linkResolver(doc) {
-  if (doc.type === "scopeblog") {
+  if (doc.type === "blog_posts") {
     return "/blog/".concat(doc.uid);
   }
 
@@ -23414,6 +23520,321 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
+/***/ "./node_modules/next-routes/dist/index.js":
+/*!************************************************!*\
+  !*** ./node_modules/next-routes/dist/index.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _pathToRegexp = _interopRequireDefault(__webpack_require__(/*! path-to-regexp */ "./node_modules/next/node_modules/path-to-regexp/index.js"));
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _url = __webpack_require__(/*! url */ "./node_modules/url/url.js");
+
+var _link = _interopRequireDefault(__webpack_require__(/*! next/link */ "./node_modules/next/link.js"));
+
+var _router = _interopRequireDefault(__webpack_require__(/*! next/router */ "./node_modules/next/router.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+module.exports = function (opts) {
+  return new Routes(opts);
+};
+
+var Routes =
+/*#__PURE__*/
+function () {
+  function Routes() {
+    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        _ref$Link = _ref.Link,
+        Link = _ref$Link === void 0 ? _link.default : _ref$Link,
+        _ref$Router = _ref.Router,
+        Router = _ref$Router === void 0 ? _router.default : _ref$Router;
+
+    _classCallCheck(this, Routes);
+
+    this.routes = [];
+    this.Link = this.getLink(Link);
+    this.Router = this.getRouter(Router);
+  }
+
+  _createClass(Routes, [{
+    key: "add",
+    value: function add(name, pattern, page) {
+      var options;
+
+      if (name instanceof Object) {
+        options = name;
+        name = options.name;
+      } else {
+        if (name[0] === '/') {
+          page = pattern;
+          pattern = name;
+          name = null;
+        }
+
+        options = {
+          name: name,
+          pattern: pattern,
+          page: page
+        };
+      }
+
+      if (this.findByName(name)) {
+        throw new Error("Route \"".concat(name, "\" already exists"));
+      }
+
+      this.routes.push(new Route(options));
+      return this;
+    }
+  }, {
+    key: "findByName",
+    value: function findByName(name) {
+      if (name) {
+        return this.routes.filter(function (route) {
+          return route.name === name;
+        })[0];
+      }
+    }
+  }, {
+    key: "match",
+    value: function match(url) {
+      var parsedUrl = (0, _url.parse)(url, true);
+      var pathname = parsedUrl.pathname,
+          query = parsedUrl.query;
+      return this.routes.reduce(function (result, route) {
+        if (result.route) return result;
+        var params = route.match(pathname);
+        if (!params) return result;
+        return _objectSpread({}, result, {
+          route: route,
+          params: params,
+          query: _objectSpread({}, query, params)
+        });
+      }, {
+        query: query,
+        parsedUrl: parsedUrl
+      });
+    }
+  }, {
+    key: "findAndGetUrls",
+    value: function findAndGetUrls(nameOrUrl, params) {
+      var route = this.findByName(nameOrUrl);
+
+      if (route) {
+        return {
+          route: route,
+          urls: route.getUrls(params),
+          byName: true
+        };
+      } else {
+        var _this$match = this.match(nameOrUrl),
+            _route = _this$match.route,
+            query = _this$match.query;
+
+        var href = _route ? _route.getHref(query) : nameOrUrl;
+        var urls = {
+          href: href,
+          as: nameOrUrl
+        };
+        return {
+          route: _route,
+          urls: urls
+        };
+      }
+    }
+  }, {
+    key: "getRequestHandler",
+    value: function getRequestHandler(app, customHandler) {
+      var _this = this;
+
+      var nextHandler = app.getRequestHandler();
+      return function (req, res) {
+        var _this$match2 = _this.match(req.url),
+            route = _this$match2.route,
+            query = _this$match2.query,
+            parsedUrl = _this$match2.parsedUrl;
+
+        if (route) {
+          if (customHandler) {
+            customHandler({
+              req: req,
+              res: res,
+              route: route,
+              query: query
+            });
+          } else {
+            app.render(req, res, route.page, query);
+          }
+        } else {
+          nextHandler(req, res, parsedUrl);
+        }
+      };
+    }
+  }, {
+    key: "getLink",
+    value: function getLink(Link) {
+      var _this2 = this;
+
+      var LinkRoutes = function LinkRoutes(props) {
+        var route = props.route,
+            params = props.params,
+            to = props.to,
+            newProps = _objectWithoutProperties(props, ["route", "params", "to"]);
+
+        var nameOrUrl = route || to;
+
+        if (nameOrUrl) {
+          Object.assign(newProps, _this2.findAndGetUrls(nameOrUrl, params).urls);
+        }
+
+        return _react.default.createElement(Link, newProps);
+      };
+
+      return LinkRoutes;
+    }
+  }, {
+    key: "getRouter",
+    value: function getRouter(Router) {
+      var _this3 = this;
+
+      var wrap = function wrap(method) {
+        return function (route, params, options) {
+          var _this3$findAndGetUrls = _this3.findAndGetUrls(route, params),
+              byName = _this3$findAndGetUrls.byName,
+              _this3$findAndGetUrls2 = _this3$findAndGetUrls.urls,
+              as = _this3$findAndGetUrls2.as,
+              href = _this3$findAndGetUrls2.href;
+
+          return Router[method](href, as, byName ? options : params);
+        };
+      };
+
+      Router.pushRoute = wrap('push');
+      Router.replaceRoute = wrap('replace');
+      Router.prefetchRoute = wrap('prefetch');
+      return Router;
+    }
+  }]);
+
+  return Routes;
+}();
+
+var Route =
+/*#__PURE__*/
+function () {
+  function Route(_ref2) {
+    var name = _ref2.name,
+        pattern = _ref2.pattern,
+        _ref2$page = _ref2.page,
+        page = _ref2$page === void 0 ? name : _ref2$page;
+
+    _classCallCheck(this, Route);
+
+    if (!name && !page) {
+      throw new Error("Missing page to render for route \"".concat(pattern, "\""));
+    }
+
+    this.name = name;
+    this.pattern = pattern || "/".concat(name);
+    this.page = page.replace(/(^|\/)index$/, '').replace(/^\/?/, '/');
+    this.regex = (0, _pathToRegexp.default)(this.pattern, this.keys = []);
+    this.keyNames = this.keys.map(function (key) {
+      return key.name;
+    });
+    this.toPath = _pathToRegexp.default.compile(this.pattern);
+  }
+
+  _createClass(Route, [{
+    key: "match",
+    value: function match(path) {
+      var values = this.regex.exec(path);
+
+      if (values) {
+        return this.valuesToParams(values.slice(1));
+      }
+    }
+  }, {
+    key: "valuesToParams",
+    value: function valuesToParams(values) {
+      var _this4 = this;
+
+      return values.reduce(function (params, val, i) {
+        if (val === undefined) return params;
+        return Object.assign(params, _defineProperty({}, _this4.keys[i].name, decodeURIComponent(val)));
+      }, {});
+    }
+  }, {
+    key: "getHref",
+    value: function getHref() {
+      var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      return "".concat(this.page, "?").concat(toQuerystring(params));
+    }
+  }, {
+    key: "getAs",
+    value: function getAs() {
+      var _this5 = this;
+
+      var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var as = this.toPath(params) || '/';
+      var keys = Object.keys(params);
+      var qsKeys = keys.filter(function (key) {
+        return _this5.keyNames.indexOf(key) === -1;
+      });
+      if (!qsKeys.length) return as;
+      var qsParams = qsKeys.reduce(function (qs, key) {
+        return Object.assign(qs, _defineProperty({}, key, params[key]));
+      }, {});
+      return "".concat(as, "?").concat(toQuerystring(qsParams));
+    }
+  }, {
+    key: "getUrls",
+    value: function getUrls(params) {
+      var as = this.getAs(params);
+      var href = this.getHref(params);
+      return {
+        as: as,
+        href: href
+      };
+    }
+  }]);
+
+  return Route;
+}();
+
+var toQuerystring = function toQuerystring(obj) {
+  return Object.keys(obj).filter(function (key) {
+    return obj[key] !== null && obj[key] !== undefined;
+  }).map(function (key) {
+    var value = obj[key];
+
+    if (Array.isArray(value)) {
+      value = value.join('/');
+    }
+
+    return [encodeURIComponent(key), encodeURIComponent(value)].join('=');
+  }).join('&');
+};
+
+/***/ }),
+
 /***/ "./node_modules/next/dist/lib/EventEmitter.js":
 /*!****************************************************!*\
   !*** ./node_modules/next/dist/lib/EventEmitter.js ***!
@@ -25506,6 +25927,388 @@ module.exports = __webpack_require__(/*! ./dist/lib/head */ "./node_modules/next
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! ./dist/lib/link */ "./node_modules/next/dist/lib/link.js")
+
+
+/***/ }),
+
+/***/ "./node_modules/next/node_modules/path-to-regexp/index.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/next/node_modules/path-to-regexp/index.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Expose `pathToRegexp`.
+ */
+module.exports = pathToRegexp
+module.exports.parse = parse
+module.exports.compile = compile
+module.exports.tokensToFunction = tokensToFunction
+module.exports.tokensToRegExp = tokensToRegExp
+
+/**
+ * Default configs.
+ */
+var DEFAULT_DELIMITER = '/'
+var DEFAULT_DELIMITERS = './'
+
+/**
+ * The main path matching regexp utility.
+ *
+ * @type {RegExp}
+ */
+var PATH_REGEXP = new RegExp([
+  // Match escaped characters that would otherwise appear in future matches.
+  // This allows the user to escape special characters that won't transform.
+  '(\\\\.)',
+  // Match Express-style parameters and un-named parameters with a prefix
+  // and optional suffixes. Matches appear as:
+  //
+  // "/:test(\\d+)?" => ["/", "test", "\d+", undefined, "?"]
+  // "/route(\\d+)"  => [undefined, undefined, undefined, "\d+", undefined]
+  '(?:\\:(\\w+)(?:\\(((?:\\\\.|[^\\\\()])+)\\))?|\\(((?:\\\\.|[^\\\\()])+)\\))([+*?])?'
+].join('|'), 'g')
+
+/**
+ * Parse a string for the raw tokens.
+ *
+ * @param  {string}  str
+ * @param  {Object=} options
+ * @return {!Array}
+ */
+function parse (str, options) {
+  var tokens = []
+  var key = 0
+  var index = 0
+  var path = ''
+  var defaultDelimiter = (options && options.delimiter) || DEFAULT_DELIMITER
+  var delimiters = (options && options.delimiters) || DEFAULT_DELIMITERS
+  var pathEscaped = false
+  var res
+
+  while ((res = PATH_REGEXP.exec(str)) !== null) {
+    var m = res[0]
+    var escaped = res[1]
+    var offset = res.index
+    path += str.slice(index, offset)
+    index = offset + m.length
+
+    // Ignore already escaped sequences.
+    if (escaped) {
+      path += escaped[1]
+      pathEscaped = true
+      continue
+    }
+
+    var prev = ''
+    var next = str[index]
+    var name = res[2]
+    var capture = res[3]
+    var group = res[4]
+    var modifier = res[5]
+
+    if (!pathEscaped && path.length) {
+      var k = path.length - 1
+
+      if (delimiters.indexOf(path[k]) > -1) {
+        prev = path[k]
+        path = path.slice(0, k)
+      }
+    }
+
+    // Push the current path onto the tokens.
+    if (path) {
+      tokens.push(path)
+      path = ''
+      pathEscaped = false
+    }
+
+    var partial = prev !== '' && next !== undefined && next !== prev
+    var repeat = modifier === '+' || modifier === '*'
+    var optional = modifier === '?' || modifier === '*'
+    var delimiter = prev || defaultDelimiter
+    var pattern = capture || group
+
+    tokens.push({
+      name: name || key++,
+      prefix: prev,
+      delimiter: delimiter,
+      optional: optional,
+      repeat: repeat,
+      partial: partial,
+      pattern: pattern ? escapeGroup(pattern) : '[^' + escapeString(delimiter) + ']+?'
+    })
+  }
+
+  // Push any remaining characters.
+  if (path || index < str.length) {
+    tokens.push(path + str.substr(index))
+  }
+
+  return tokens
+}
+
+/**
+ * Compile a string to a template function for the path.
+ *
+ * @param  {string}             str
+ * @param  {Object=}            options
+ * @return {!function(Object=, Object=)}
+ */
+function compile (str, options) {
+  return tokensToFunction(parse(str, options))
+}
+
+/**
+ * Expose a method for transforming tokens into the path function.
+ */
+function tokensToFunction (tokens) {
+  // Compile all the tokens into regexps.
+  var matches = new Array(tokens.length)
+
+  // Compile all the patterns before compilation.
+  for (var i = 0; i < tokens.length; i++) {
+    if (typeof tokens[i] === 'object') {
+      matches[i] = new RegExp('^(?:' + tokens[i].pattern + ')$')
+    }
+  }
+
+  return function (data, options) {
+    var path = ''
+    var encode = (options && options.encode) || encodeURIComponent
+
+    for (var i = 0; i < tokens.length; i++) {
+      var token = tokens[i]
+
+      if (typeof token === 'string') {
+        path += token
+        continue
+      }
+
+      var value = data ? data[token.name] : undefined
+      var segment
+
+      if (Array.isArray(value)) {
+        if (!token.repeat) {
+          throw new TypeError('Expected "' + token.name + '" to not repeat, but got array')
+        }
+
+        if (value.length === 0) {
+          if (token.optional) continue
+
+          throw new TypeError('Expected "' + token.name + '" to not be empty')
+        }
+
+        for (var j = 0; j < value.length; j++) {
+          segment = encode(value[j])
+
+          if (!matches[i].test(segment)) {
+            throw new TypeError('Expected all "' + token.name + '" to match "' + token.pattern + '"')
+          }
+
+          path += (j === 0 ? token.prefix : token.delimiter) + segment
+        }
+
+        continue
+      }
+
+      if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {
+        segment = encode(String(value))
+
+        if (!matches[i].test(segment)) {
+          throw new TypeError('Expected "' + token.name + '" to match "' + token.pattern + '", but got "' + segment + '"')
+        }
+
+        path += token.prefix + segment
+        continue
+      }
+
+      if (token.optional) {
+        // Prepend partial segment prefixes.
+        if (token.partial) path += token.prefix
+
+        continue
+      }
+
+      throw new TypeError('Expected "' + token.name + '" to be ' + (token.repeat ? 'an array' : 'a string'))
+    }
+
+    return path
+  }
+}
+
+/**
+ * Escape a regular expression string.
+ *
+ * @param  {string} str
+ * @return {string}
+ */
+function escapeString (str) {
+  return str.replace(/([.+*?=^!:${}()[\]|/\\])/g, '\\$1')
+}
+
+/**
+ * Escape the capturing group by escaping special characters and meaning.
+ *
+ * @param  {string} group
+ * @return {string}
+ */
+function escapeGroup (group) {
+  return group.replace(/([=!:$/()])/g, '\\$1')
+}
+
+/**
+ * Get the flags for a regexp from the options.
+ *
+ * @param  {Object} options
+ * @return {string}
+ */
+function flags (options) {
+  return options && options.sensitive ? '' : 'i'
+}
+
+/**
+ * Pull out keys from a regexp.
+ *
+ * @param  {!RegExp} path
+ * @param  {Array=}  keys
+ * @return {!RegExp}
+ */
+function regexpToRegexp (path, keys) {
+  if (!keys) return path
+
+  // Use a negative lookahead to match only capturing groups.
+  var groups = path.source.match(/\((?!\?)/g)
+
+  if (groups) {
+    for (var i = 0; i < groups.length; i++) {
+      keys.push({
+        name: i,
+        prefix: null,
+        delimiter: null,
+        optional: false,
+        repeat: false,
+        partial: false,
+        pattern: null
+      })
+    }
+  }
+
+  return path
+}
+
+/**
+ * Transform an array into a regexp.
+ *
+ * @param  {!Array}  path
+ * @param  {Array=}  keys
+ * @param  {Object=} options
+ * @return {!RegExp}
+ */
+function arrayToRegexp (path, keys, options) {
+  var parts = []
+
+  for (var i = 0; i < path.length; i++) {
+    parts.push(pathToRegexp(path[i], keys, options).source)
+  }
+
+  return new RegExp('(?:' + parts.join('|') + ')', flags(options))
+}
+
+/**
+ * Create a path regexp from string input.
+ *
+ * @param  {string}  path
+ * @param  {Array=}  keys
+ * @param  {Object=} options
+ * @return {!RegExp}
+ */
+function stringToRegexp (path, keys, options) {
+  return tokensToRegExp(parse(path, options), keys, options)
+}
+
+/**
+ * Expose a function for taking tokens and returning a RegExp.
+ *
+ * @param  {!Array}  tokens
+ * @param  {Array=}  keys
+ * @param  {Object=} options
+ * @return {!RegExp}
+ */
+function tokensToRegExp (tokens, keys, options) {
+  options = options || {}
+
+  var strict = options.strict
+  var end = options.end !== false
+  var delimiter = escapeString(options.delimiter || DEFAULT_DELIMITER)
+  var delimiters = options.delimiters || DEFAULT_DELIMITERS
+  var endsWith = [].concat(options.endsWith || []).map(escapeString).concat('$').join('|')
+  var route = ''
+  var isEndDelimited = false
+
+  // Iterate over the tokens and create our regexp string.
+  for (var i = 0; i < tokens.length; i++) {
+    var token = tokens[i]
+
+    if (typeof token === 'string') {
+      route += escapeString(token)
+      isEndDelimited = i === tokens.length - 1 && delimiters.indexOf(token[token.length - 1]) > -1
+    } else {
+      var prefix = escapeString(token.prefix)
+      var capture = token.repeat
+        ? '(?:' + token.pattern + ')(?:' + prefix + '(?:' + token.pattern + '))*'
+        : token.pattern
+
+      if (keys) keys.push(token)
+
+      if (token.optional) {
+        if (token.partial) {
+          route += prefix + '(' + capture + ')?'
+        } else {
+          route += '(?:' + prefix + '(' + capture + '))?'
+        }
+      } else {
+        route += prefix + '(' + capture + ')'
+      }
+    }
+  }
+
+  if (end) {
+    if (!strict) route += '(?:' + delimiter + ')?'
+
+    route += endsWith === '$' ? '$' : '(?=' + endsWith + ')'
+  } else {
+    if (!strict) route += '(?:' + delimiter + '(?=' + endsWith + '))?'
+    if (!isEndDelimited) route += '(?=' + delimiter + '|' + endsWith + ')'
+  }
+
+  return new RegExp('^' + route, flags(options))
+}
+
+/**
+ * Normalize the given path string, returning a regular expression.
+ *
+ * An empty array can be passed in for the keys, which will hold the
+ * placeholder key descriptions. For example, using `/user/:id`, `keys` will
+ * contain `[{ name: 'id', delimiter: '/', optional: false, repeat: false }]`.
+ *
+ * @param  {(string|RegExp|Array)} path
+ * @param  {Array=}                keys
+ * @param  {Object=}               options
+ * @return {!RegExp}
+ */
+function pathToRegexp (path, keys, options) {
+  if (path instanceof RegExp) {
+    return regexpToRegexp(path, keys)
+  }
+
+  if (Array.isArray(path)) {
+    return arrayToRegexp(/** @type {!Array} */ (path), keys, options)
+  }
+
+  return stringToRegexp(/** @type {string} */ (path), keys, options)
+}
 
 
 /***/ }),
@@ -29024,14 +29827,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../api */ "./api/index.js");
-/* harmony import */ var _components_BlogPostCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/BlogPostCard */ "./components/BlogPostCard.js");
-/* harmony import */ var _components_FeaturedPost__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/FeaturedPost */ "./components/FeaturedPost.js");
-/* harmony import */ var _components_BlogPosts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/BlogPosts */ "./components/BlogPosts.js");
-/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
-/* harmony import */ var _components_MetaContent__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/MetaContent */ "./components/MetaContent.js");
-/* harmony import */ var _components_common_getContentUrl__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/common/getContentUrl */ "./components/common/getContentUrl.js");
-/* harmony import */ var _blog_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./blog.scss */ "./pages/blog.scss");
-/* harmony import */ var _blog_scss__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_blog_scss__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _components_FeaturedPost__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/FeaturedPost */ "./components/FeaturedPost.js");
+/* harmony import */ var _components_BlogPosts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/BlogPosts */ "./components/BlogPosts.js");
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
+/* harmony import */ var _components_MetaContent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/MetaContent */ "./components/MetaContent.js");
+/* harmony import */ var _components_common_getContentUrl__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/common/getContentUrl */ "./components/common/getContentUrl.js");
+/* harmony import */ var _blog_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./blog.scss */ "./pages/blog.scss");
+/* harmony import */ var _blog_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_blog_scss__WEBPACK_IMPORTED_MODULE_8__);
 
 
 
@@ -29055,31 +29857,31 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-var Index = function Index(_ref) {
+var Blog = function Blog(_ref) {
   var _ref$featuredPost = _ref.featuredPost,
       featuredPost = _ref$featuredPost === void 0 ? {} : _ref$featuredPost;
 
-  var _getContentUrl = Object(_components_common_getContentUrl__WEBPACK_IMPORTED_MODULE_8__["getContentUrl"])(),
+  var _getContentUrl = Object(_components_common_getContentUrl__WEBPACK_IMPORTED_MODULE_7__["getContentUrl"])(),
       _getContentUrl2 = _slicedToArray(_getContentUrl, 1),
       contentUrl = _getContentUrl2[0];
 
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    paddingTop: "4rem"
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_MetaContent__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    paddingTop: "4rem",
+    shadowLine: true
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_MetaContent__WEBPACK_IMPORTED_MODULE_6__["default"], {
     contentType: "article",
     contentTitle: "Blog",
     contentDescription: "Awesome Articles",
-    contentImage: "static/assets/images/logo.png",
+    contentImage: "/static/assets/images/logo.png",
     contentUrl: contentUrl
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
     className: "blog"
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_FeaturedPost__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_FeaturedPost__WEBPACK_IMPORTED_MODULE_3__["default"], {
     featuredPost: featuredPost
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_BlogPosts__WEBPACK_IMPORTED_MODULE_5__["default"], null)));
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_BlogPosts__WEBPACK_IMPORTED_MODULE_4__["default"], null)));
 };
 
-Index.getInitialProps =
+Blog.getInitialProps =
 /*#__PURE__*/
 _asyncToGenerator(
 /*#__PURE__*/
@@ -29108,7 +29910,7 @@ _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function 
     }
   }, _callee, this);
 }));
-/* harmony default export */ __webpack_exports__["default"] = (Index);
+/* harmony default export */ __webpack_exports__["default"] = (Blog);
     (function (Component, route) {
       if(!Component) return
       if (false) {}
@@ -29128,6 +29930,19 @@ _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function 
     })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/blog")
   
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
+
+/***/ }),
+
+/***/ "./routes.js":
+/*!*******************!*\
+  !*** ./routes.js ***!
+  \*******************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var routes = __webpack_require__(/*! next-routes */ "./node_modules/next-routes/dist/index.js");
+
+module.exports = routes().add('index', '/').add('blog', '/blog').add('post', '/blog/:slug').add('constitution', '/constitution');
 
 /***/ }),
 

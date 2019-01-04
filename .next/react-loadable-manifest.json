@@ -27,13 +27,13 @@
       "publicPath": "static/chunks/styles.js"
     },
     {
-      "id": 9,
+      "id": 11,
       "name": null,
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     },
     {
-      "id": 10,
+      "id": 12,
       "name": null,
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
@@ -53,18 +53,18 @@
       "publicPath": "static/chunks/styles.js"
     }
   ],
-  "./header.scss": [
+  "./post.scss": [
     {
-      "id": "./components/header.scss",
-      "name": "./components/header.scss",
+      "id": "./pages/post.scss",
+      "name": "./pages/post.scss",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }
   ],
-  "./constitution.scss": [
+  "./header.scss": [
     {
-      "id": "./pages/constitution.scss",
-      "name": "./pages/constitution.scss",
+      "id": "./components/header.scss",
+      "name": "./components/header.scss",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }

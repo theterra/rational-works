@@ -1,15 +1,21 @@
+@import "./global.scss";
+
 .blog {
   max-width: 75rem;
   margin: 0 auto;
 
   &__feature {
     padding: 2rem;
+    @media only screen and (max-width: $bp-large) {
+      display: none;
+    }
     &--container {
       height: 60vh;
-      background: #f9f9f9;
+      background: #fff;
       display: flex;
       justify-content: center;
       overflow: hidden;
+      box-shadow: var(--shadow-elevate-16);
     }
 
     &__content {
@@ -45,7 +51,6 @@
 
     &__image-box {
       width: 100%;
-      cursor: pointer;
       &:hover {
         filter: opacity(0.85);
       }
