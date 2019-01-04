@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import Layout from "../components/Layout";
 import MetaContent from "../components/MetaContent";

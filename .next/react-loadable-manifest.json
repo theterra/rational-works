@@ -1,8 +1,16 @@
 {
-  "./blogPosts.scss": [
+  "./noop": [
     {
-      "id": "./components/blogPosts.scss",
-      "name": "./components/blogPosts.scss",
+      "id": "./node_modules/next/dist/client/noop.js",
+      "name": "./node_modules/next/dist/client/noop.js",
+      "file": "static/chunks/0.js",
+      "publicPath": "static/chunks/0.js"
+    }
+  ],
+  "./header.scss": [
+    {
+      "id": "./components/header.scss",
+      "name": "./components/header.scss",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }
@@ -27,19 +35,7 @@
       "publicPath": "static/chunks/styles.js"
     },
     {
-      "id": 11,
-      "name": null,
-      "file": "static/chunks/styles.js",
-      "publicPath": "static/chunks/styles.js"
-    },
-    {
-      "id": 12,
-      "name": null,
-      "file": "static/chunks/styles.js",
-      "publicPath": "static/chunks/styles.js"
-    },
-    {
-      "id": 14,
+      "id": 7,
       "name": null,
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
@@ -53,30 +49,6 @@
       "publicPath": "static/chunks/styles.js"
     }
   ],
-  "./post.scss": [
-    {
-      "id": "./pages/post.scss",
-      "name": "./pages/post.scss",
-      "file": "static/chunks/styles.js",
-      "publicPath": "static/chunks/styles.js"
-    }
-  ],
-  "./header.scss": [
-    {
-      "id": "./components/header.scss",
-      "name": "./components/header.scss",
-      "file": "static/chunks/styles.js",
-      "publicPath": "static/chunks/styles.js"
-    }
-  ],
-  "./blog.scss": [
-    {
-      "id": "./pages/blog.scss",
-      "name": "./pages/blog.scss",
-      "file": "static/chunks/styles.js",
-      "publicPath": "static/chunks/styles.js"
-    }
-  ],
   "./layout.scss": [
     {
       "id": "./components/layout.scss",
@@ -85,12 +57,12 @@
       "publicPath": "static/chunks/styles.js"
     }
   ],
-  "./noop": [
+  "./index.scss": [
     {
-      "id": "./node_modules/next/dist/client/noop.js",
-      "name": "./node_modules/next/dist/client/noop.js",
-      "file": "static/chunks/0.js",
-      "publicPath": "static/chunks/0.js"
+      "id": "./pages/index.scss",
+      "name": "./pages/index.scss",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
     }
   ]
 }

@@ -281,7 +281,7 @@ function (_App) {
 
 var routes = __webpack_require__(/*! next-routes */ "next-routes");
 
-module.exports = routes().add('index', '/').add('blog', '/blog').add('post', '/blog/:slug').add('constitution', '/constitution');
+module.exports = routes().add("index", "/").add("blog", "/blog").add("post", "/blog/:slug").add("constitution", "/constitution").add("faqs", "/faqs");
 
 /***/ }),
 
