@@ -40,7 +40,7 @@ const PillarCards = () => {
       .catch(() => {
         responseHandler([]);
       });
-  });
+  }, []);
 
   const fiveBlocks = list.slice(0, 5);
   const fourBlocks = list.slice(5);
