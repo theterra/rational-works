@@ -21,10 +21,11 @@
     }
 
     &--wrapper {
+      width: 100%;
       display: flex;
       flex-direction: column;
       background-color: #fff;
-      box-shadow: var(--shadow-elevate-16)
+      box-shadow: var(--shadow-elevate-16);
     }
   }
 

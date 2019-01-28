@@ -1,11 +1,13 @@
 import { Link } from "../routes";
+import Head from "next/head";
 
 import Layout from "../components/Layout";
-import PillarCards from "../components/PillarCards";
+// import PillarCards from "../components/PillarCards";
 import MetaContent from "../components/MetaContent";
 import { getContentUrl } from "../components/common/getContentUrl";
 
 import "./index.scss";
+import SlideShow from "../components/SlideShow";
 
 const Index = () => {
   const [contentUrl] = getContentUrl();
@@ -26,6 +28,21 @@ const Index = () => {
         contentImage={"/static/assets/images/logo.png"}
         contentUrl={contentUrl}
       />
+
+      <Head>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          charset="UTF-8"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+        />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+        />
+      </Head>
+
       <header className="header">
         <div className="header__content">
           <div className="header__content--left">
@@ -75,13 +92,16 @@ const Index = () => {
                 What is <span className="highlight">Rationalism</span>?
               </p>
               <p className="content__item--sub">
-                Rationalism is a way of life. To be a Rationalist You must
-                follow our Constitution. Our Constitution Comprises of 13
-                Independent Pillars.
+                Rationalism is a way to lead your life. You can choose to follow
+                it or not. There is no right or wrong in this world. No matter
+                whatever you do, there are a set of people who will always
+                criticise. So, it’s upto you to decide how to lead your life. I
+                am presenting you a different way to lead life. Now it’s your
+                turn to follow it or not.
               </p>
             </div>
           </div>
-          <div className="content__bloat">
+          {/* <div className="content__bloat">
             <ul className="content__bloat__list">
               <li className="content__bloat__list__item">
                 <Link href="/constitution">
@@ -149,20 +169,22 @@ const Index = () => {
                 </Link>
               </li>
             </ul>
-            {/* <div style={{ display: "flex", justifyContent: "center"}}>
-              <Link href="/constitution">
-                <span className="read__more">Learn more</span>
-              </Link> <span>&rarr;</span>
-            </div> */}
-          </div>
+          </div> */}
         </div>
       </section>
 
-      <section className="section-principles">
+      {/* <section className="section-principles">
         <div className="principles">
           <PillarCards />
         </div>
+      </section> */}
+
+      <section className="section-principles">
+        <div className="principles">
+          <SlideShow />
+        </div>
       </section>
+
       <section className="section-quotes">
         <div className="quotes">
           <div className="quotes__item">
@@ -181,12 +203,26 @@ const Index = () => {
               Falling down is an accident. Staying down is a choice.
             </div>
           </div>
-          <div className="quotes__item" style={{ opacity: 0, minHeight: 0}}>
-            <div className="quotes__item__text" />
+          <div className="quotes__item">
+            <div className="quotes__item__text">
+            Hard work beats talent when talent doesn’t work hard
+            </div>
           </div>
+          {/* <div className="quotes__item" style={{ opacity: 0, minHeight: 0 }}>
+            <div className="quotes__item__text" />
+          </div> */}
         </div>
       </section>
-
+      <section className="section-twitter" id="twitter">
+        <a
+          className="twitter-timeline"
+          href="https://twitter.com/RationalWorks"
+          data-width="500"
+          data-height="400"
+        >
+          Tweets by @RationalWorks
+        </a>
+      </section>
       {/* <section className="section-questions">
         <div className="questions">
           <div className="questions__item">
