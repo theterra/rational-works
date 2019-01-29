@@ -9,6 +9,8 @@ import { getContentUrl } from "../components/common/getContentUrl";
 import "./index.scss";
 import SlideShow from "../components/SlideShow";
 
+import TwitterCard from "../components/TwitterCard";
+
 const Index = () => {
   const [contentUrl] = getContentUrl();
   const scrollToView = id => {
@@ -205,7 +207,7 @@ const Index = () => {
           </div>
           <div className="quotes__item">
             <div className="quotes__item__text">
-            Hard work beats talent when talent doesn’t work hard
+              Hard work beats talent when talent doesn’t work hard
             </div>
           </div>
           {/* <div className="quotes__item" style={{ opacity: 0, minHeight: 0 }}>
@@ -214,14 +216,7 @@ const Index = () => {
         </div>
       </section>
       <section className="section-twitter" id="twitter">
-        <a
-          className="twitter-timeline"
-          href="https://twitter.com/RationalWorks"
-          data-width="500"
-          data-height="400"
-        >
-          Tweets by @RationalWorks
-        </a>
+        <TwitterCard />
       </section>
       {/* <section className="section-questions">
         <div className="questions">

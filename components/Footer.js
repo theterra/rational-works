@@ -11,7 +11,7 @@ const Footer = () => {
             <p className="footer__sub-part--desc">
               Rational Works
               <br />
-              Address: via privata branda castiglioni 2/1, milan, lombardy 20156, it
+              via privata branda castiglioni 2/1, milan, lombardy 20156, it
             </p>
           </div>
           <div className="footer__sub-part">
