@@ -1,0 +1,59 @@
+.twitter {
+  background: #000;
+  border-radius: 10px;
+  box-shadow: var(--shadow-elevate-12);
+  overflow: hidden;
+
+  &__wrapper {
+    display: flex;
+    height: 400px;
+    min-height: 200px;
+  }
+
+  &__content {
+    flex: 1 0 60%;
+    color: #fff;
+    display: flex;
+    padding: 5rem;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  &__title--wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__title {
+    font-size: 3rem;
+    z-index: 99;
+    text-shadow: var(--shadow-elevate-12);
+
+    & > svg {
+        fill: #fff;
+      }
+  }
+
+  &__icon {
+    position: absolute;
+    bottom: -20%;
+    left: -8%;
+    fill: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+  }
+
+  &__timeline--wrapper {
+    flex: 1 0 40%;
+  }
+
+  &-timeline {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+.timeline-Widget {
+  border-radius: none !important;
+}

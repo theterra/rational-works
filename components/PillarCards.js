@@ -61,11 +61,4 @@ const PillarCards = () => {
   );
 };
 
-PillarCards.getInitialProps = async () => {
-  const response = await getConstitutionAPI({});
-  return {
-    data: response.results[0].data
-  };
-};
-
 export default PillarCards;

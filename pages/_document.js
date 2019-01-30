@@ -109,6 +109,11 @@ export default class MyDocument extends Document {
           }
           
         }
+
+        ::selection {
+          background-color: rgba(255, 196, 0, 0.75);
+          color: #fff;
+        }
           `}</style>
         </Head>
         <body className="custom_class">
