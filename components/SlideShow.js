@@ -6,6 +6,7 @@ import { getConstitutionAPI } from "../api";
 import Loader from "./Loader";
 
 import "./slideShow.scss";
+import StarsIcon from "./StarsIcon";
 
 const SlideShow = () => {
   const [list] = getSlideData();
@@ -43,6 +44,7 @@ const SliderCard = ({ item }) => {
     : "/static/assets/images/no-image.jpg";
   return (
     <div className="slideshow__wrapper">
+      <StarsIcon />
       <div className="slideshow__content">
         <Link href="/constitution">
           <div className="slideshow__title-wrapper">

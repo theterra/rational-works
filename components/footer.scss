@@ -23,7 +23,7 @@
 
   &__navigation {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 
     @media only screen and (max-width: $bp-small) {
       flex-direction: column;
@@ -33,7 +33,11 @@
   }
 
   &__sub-part {
-    max-width: 33.3333333333%;
+   max-width: 25%;
+
+   @media only screen and (max-width: $bp-small) {
+    max-width: 100%;
+  }
 
     &--title {
     }
@@ -47,6 +51,16 @@
       &:hover {
         color: rgba(255, 196, 0, 0.75) !important;
       }
+    }
+  }
+
+  &__share-links {
+    .share__button {
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+
+      fill: #fff;
     }
   }
 }

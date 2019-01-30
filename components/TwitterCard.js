@@ -17,7 +17,7 @@ const TwitterCard = () => {
   useEffect(() => {
     setTimeout(() => {
       loadCustomTwitterCss();
-    }, 100);
+    }, 500);
   }, []);
 
   return (
@@ -26,7 +26,7 @@ const TwitterCard = () => {
         <div className="twitter__content">
           <div className="twitter__title--wrapper">
             <h3 className="twitter__title">
-              To get hour to hour motivational pills <br />
+              To get hour to hour <br/> motivational pills <br />
               Please follow us on twitter&nbsp;
               <svg
                 xmlns="http://www.w3.org/2000/svg"
